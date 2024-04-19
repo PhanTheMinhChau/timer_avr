@@ -1,0 +1,62 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	main
+  20               	main:
+  21               	.LFB2:
+  22               	.LM1:
+  23               	/* prologue: function */
+  24               	/* frame size = 0 */
+  25               	.LM2:
+  26 0000 8FEF      		ldi r24,lo8(-1)
+  27 0002 87BB      		out 55-32,r24
+  28               	.LM3:
+  29 0004 18BA      		out 56-32,__zero_reg__
+  30               	.LM4:
+  31 0006 11BA      		out 49-32,__zero_reg__
+  32               	.LM5:
+  33 0008 82BB      		out 50-32,r24
+  34               	.LM6:
+  35 000a 86E0      		ldi r24,lo8(6)
+  36 000c 8EBD      		out 78-32,r24
+  37               	.L7:
+  38               	.LM7:
+  39 000e 8CB5      		in r24,76-32
+  40 0010 9DB5      		in r25,(76)+1-32
+  41 0012 0A97      		sbiw r24,10
+  42 0014 01F4      		brne .L2
+  43 0016 1DBC      		out (76)+1-32,__zero_reg__
+  44 0018 1CBC      		out 76-32,__zero_reg__
+  45               	.L2:
+  46               	.LM8:
+  47 001a 8CB5      		in r24,76-32
+  48 001c 9DB5      		in r25,(76)+1-32
+  49 001e 88BB      		out 56-32,r24
+  50               	.LM9:
+  51 0020 8799      		sbic 48-32,7
+  52 0022 00C0      		rjmp .L7
+  53 0024 1DBC      		out (76)+1-32,__zero_reg__
+  54 0026 1CBC      		out 76-32,__zero_reg__
+  55 0028 00C0      		rjmp .L7
+  56               	.LFE2:
+  82               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccRlHweL.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccRlHweL.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccRlHweL.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccRlHweL.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccRlHweL.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccRlHweL.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccRlHweL.s:20     .text:00000000 main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
